@@ -115,8 +115,9 @@ export default function App() {
             transition={{ delay: 0.4 }}
             className="text-6xl md:text-9xl font-serif mb-8 leading-tight"
           >
-            The Art of <br /> <span className="italic">Voyage</span>
+            The Art of <br /> <span className="italic">Voyage!</span>
           </motion.h1>
+
           <motion.button 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
