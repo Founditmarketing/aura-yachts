@@ -61,7 +61,7 @@ export default function App() {
           <a href="#" className="hover:text-white/70 transition-colors">Contact</a>
         </div>
 
-        <button 
+        <button
           className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -71,7 +71,7 @@ export default function App() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center gap-8 text-2xl font-serif uppercase tracking-widest"
@@ -85,23 +85,32 @@ export default function App() {
 
       {/* Hero Section */}
       <section ref={heroRef} className="relative h-screen overflow-hidden flex items-center justify-center">
-        <motion.div 
+        <motion.div
           style={{ y }}
           className="absolute inset-0 z-0"
         >
-          <img 
-            src="https://picsum.photos/seed/ocean/1920/1080?blur=2" 
+          <img
+            src="https://picsum.photos/seed/ocean/1920/1080?blur=2"
             alt="Luxury Yacht at Sea"
             className="w-full h-full object-cover brightness-50"
             referrerPolicy="no-referrer"
           />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           style={{ opacity }}
-          className="relative z-10 text-center px-4"
+          className="relative z-10 text-center px-4 flex flex-col items-center"
         >
-          <motion.p 
+          <motion.img
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.1 }}
+            src="/bell.png"
+            alt="Aura Bell Icon"
+            className="w-16 h-16 md:w-20 md:h-20 mb-8 object-contain"
+          />
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -109,7 +118,7 @@ export default function App() {
           >
             Redefining the Horizon
           </motion.p>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -118,7 +127,7 @@ export default function App() {
             The Art of <br /> <span className="italic">Voyage!</span>
           </motion.h1>
 
-          <motion.button 
+          <motion.button
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
@@ -168,7 +177,7 @@ export default function App() {
 
         <div className="flex flex-col gap-24">
           {YACHTS.map((yacht, index) => (
-            <motion.div 
+            <motion.div
               key={yacht.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -176,8 +185,8 @@ export default function App() {
               className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 px-6 md:px-12`}
             >
               <div className="flex-1 overflow-hidden rounded-2xl group">
-                <img 
-                  src={yacht.image} 
+                <img
+                  src={yacht.image}
                   alt={yacht.name}
                   className="w-full aspect-[16/10] object-cover transition-transform duration-700 group-hover:scale-110"
                   referrerPolicy="no-referrer"
@@ -203,8 +212,8 @@ export default function App() {
 
       {/* Experience Section */}
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <img 
-          src="https://picsum.photos/seed/interior/1920/1080?grayscale" 
+        <img
+          src="https://picsum.photos/seed/interior/1920/1080?grayscale"
           alt="Luxury Interior"
           className="absolute inset-0 w-full h-full object-cover opacity-40"
           referrerPolicy="no-referrer"
@@ -245,7 +254,7 @@ export default function App() {
               Crafting the future of maritime luxury since 1972. Headquartered in Monaco, serving the world.
             </p>
           </div>
-          
+
           <div className="space-y-4">
             <h5 className="text-xs uppercase tracking-widest font-semibold">Fleet</h5>
             <ul className="text-sm text-white/40 space-y-2">
@@ -270,8 +279,8 @@ export default function App() {
             <h5 className="text-xs uppercase tracking-widest font-semibold">Newsletter</h5>
             <p className="text-sm text-white/40">Join our exclusive circle for maritime updates.</p>
             <div className="flex gap-2">
-              <input 
-                type="email" 
+              <input
+                type="email"
                 placeholder="Email address"
                 className="bg-white/5 border border-white/10 rounded-full px-4 py-2 text-sm w-full focus:outline-none focus:border-white/30"
               />
